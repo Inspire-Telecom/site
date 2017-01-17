@@ -3,7 +3,7 @@ layout: default
 ---
 {% include header-home.html %}
 {% for section in site.sections %}
-  <section class="{{ section.slug }}">
+  <section class="{{ section.name }}">
     <div class="content">
       {% if section.title %}
       <header>
@@ -16,7 +16,7 @@ layout: default
     {{ section.content }}
     </div>
     {% if section.button %}
-      {% include devis-button.twig button=section.button %}
+      {% include devis-button.html button=section.button %}
     {% endif %}
   </section>
 {% endfor %}

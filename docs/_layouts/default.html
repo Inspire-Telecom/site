@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="{{ '/assets/styles/inspire.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/assets/styles/fonts.css' | relative_url }}" />
     {% include favicons.html %}
-    <meta property="og:image" content="{{ '/assets/img/logo.png' | absolute_url }}" />
+    <meta property="og:image" content="{{ site.logo | absolute_url }}" />
   </head>
   <body>
     {% include topbar.html %}
     <main role="main" class="">{{ content }}</main>
     {% include footer.html %}
+    {% include analytics.html %}
   </body>
 </html>

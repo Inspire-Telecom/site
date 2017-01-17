@@ -15,15 +15,13 @@ baseurl: ""
 
 # Used for SEO
 author: Inspire
-logo: /assets/icon/favicon.png
+logo: /assets/favicons/favicon.png
 
 # Front Tools
 google_analytics: UA-78299187-1
 
 # Engines
 permalink: /:title/
-paginate: 10
-paginate_path: /page/:num
 sass:
   style: :compressed
 
