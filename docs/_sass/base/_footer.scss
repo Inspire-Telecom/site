@@ -35,10 +35,15 @@ footer {
   abbr {
     color: $white;
   }
-}
 
-footer .content {
-  margin-bottom: 5rem;
+  .content {
+    margin-bottom: 5rem;
+  }
+
+  .network {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 address {

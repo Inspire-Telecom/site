@@ -6,9 +6,9 @@ title: null
 <main role="main" class="">
   {% assign sections = site.sections | sort: 'number' %}
   {% for section in sections %}
-    <section class="{{ section.name }}">
+    <section class="{{ section.slug }}">
       <div class="content">
-        {% if section.title != section.name %}
+        {% if section.title != false %}
         <header>
           <h2>{{ section.title }}</h2>
           {% if section.subtitle  %}
