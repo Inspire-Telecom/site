@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% include header-home.html %}
+{% for section in site.sections %}
+  <section class="{{ section.slug }}">
+    <div class="content">
+      {% if section.title %}
+      <header>
+        <h2>{{ section.title }}</h2>
+        {% if section.subtitle  %}
+        <h4 class="subheader">{{ section.subtitle }}</h4>
+        {% endif %}
+      </header>
+      {% endif %}
+    {{ section.content }}
+    </div>
+    {% if section.button %}
+      {% include devis-button.twig button=section.button %}
+    {% endif %}
+  </section>
+{% endfor %}

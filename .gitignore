@@ -1,0 +1,15 @@
+# Dependencies
+/bower_components
+/node_modules
+/vendor
+npm-debug.log
+
+# Builds
+/htdocs/assets
+
+# Project
+/.vs
+
+# Instance
+/logs
+/cache

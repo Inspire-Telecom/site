@@ -1,0 +1,19 @@
+.client, .partner {
+  @include flex-grid-column(50%);
+  text-align: center;
+  margin-bottom: 2rem;
+
+  img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+  }
+
+  @include breakpoint(medium) {
+    @include flex-grid-column();
+  }
+}
+
+  h5 {
+    margin-top: 1rem;
+  }

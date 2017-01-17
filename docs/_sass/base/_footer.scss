@@ -1,0 +1,52 @@
+footer {
+  background: map-get($foundation-palette, secondary);
+  color: $white;
+  font-size: small;
+  padding: {
+    top: 5rem;
+  }
+
+  a {
+    color: $white;
+  }
+
+  .license {
+    background: map-get($foundation-palette, primary);
+    text-align: center;
+    width: 100%;
+    padding: {
+      top: 1rem;
+      bottom: 1rem;
+    }
+  }
+
+  .logo {
+    width: 120px;
+
+    &-back {
+      background: $white;
+      padding: 7px 18px 7px 10px;
+      display: inline-block;
+      border-radius: 35px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  abbr {
+    color: $white;
+  }
+}
+
+footer .content {
+  margin-bottom: 5rem;
+}
+
+address {
+  font-style: normal;
+}
+
+.info {
+  @include breakpoint(medium) {
+    @include flex-grid-column();
+  }
+}

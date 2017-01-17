@@ -1,0 +1,18 @@
+.competences {
+  .icons {
+    width: 140px;
+    height: 140px;
+    padding: 30px;
+    margin-bottom: -20px;
+  }
+
+  .callout {
+    text-align: center;
+    height: calc(100% - 140px);
+    transition: $inspire-shadow-transition;
+  }
+}
+
+.competence:hover .callout {
+  box-shadow: $inspire-shadow;
+}

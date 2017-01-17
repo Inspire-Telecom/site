@@ -1,0 +1,56 @@
+---
+title: Contact
+subtitle: Nous contacter
+---
+<form method="post" action="https://contact.inspire-telecom.com/contact/new">
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <label>
+        Prénom
+        <input type="text" placeholder="Pierre" name="prenom" required>
+      </label>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <label>
+        Nom
+        <input type="text" placeholder="Dupond" name="nom" required>
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <label>
+        Société
+        <input type="text" placeholder="Inspire, Inc." name="societe" required>
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <label>
+        Adresse email
+        <input type="email" placeholder="pierre.dupond@inspire-telecom.com" name="email" required>
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <label>
+        Téléphone
+        <input type="tel" placeholder="0623456789" name="tel">
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <label>
+        Sujet
+        <select name="sujet">
+          <option value="general">Général</option>
+          <option value="devis">Demande de devis</option>
+        </select>
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <label>
+        Message
+        <textarea placeholder="Nous souhaitons échanger avec vous..." name="message" required></textarea>
+      </label>
+    </div>
+    <div class="columns">
+      <button class="expanded button large" type="submit">Envoyer</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+@mixin ratio($ratio: 100%) {
+  &::before {
+    content: '';
+    display: block;
+    padding-top: $ratio;
+  }
+}

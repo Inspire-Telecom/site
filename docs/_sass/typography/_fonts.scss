@@ -1,0 +1,15 @@
+//
+// FONTS
+//
+
+@each $font-name, $font-file, $font-weight, $font-style in $font-faces {
+  @font-face {
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url('#{$font-path}#{$font-file}-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}#{$font-file}-webfont.woff2') format('woff2'),
+         url('#{$font-path}#{$font-file}-webfont.woff') format('woff'),
+         url('#{$font-path}#{$font-file}-webfont.ttf') format('truetype');
+  }
+}

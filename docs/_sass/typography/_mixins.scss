@@ -1,0 +1,24 @@
+//
+// MIXINS
+//
+
+// Hyphenation
+// http://caniuse.com/#feat=css-hyphens
+@mixin hyphens($value) {
+  hyphens: $value;
+}
+
+@mixin quotemarks($mark-before, $mark-after) {
+  &::before {
+    content: $mark-before;
+  }
+
+  &::after {
+    content: $mark-after;
+  }
+}
+
+@mixin type-list($padd-left: 0) {
+  list-style-position: outside;
+  padding-left: $padd-left;
+}

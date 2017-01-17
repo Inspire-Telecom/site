@@ -1,0 +1,36 @@
+.context {
+  .image-section {
+    max-width: 40%;
+    padding-right: 10%;
+    padding-left: 10%;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      max-height: 150px;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .media-object {
+      &:nth-of-type(even) {
+        .image-section {
+          @include flex-order(2);
+        }
+
+        .main-section {
+          @include flex-order(1);
+          text-align: right;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  iframe {
+    margin-bottom: 3em;
+  }
+}

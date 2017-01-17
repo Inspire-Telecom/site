@@ -1,0 +1,9 @@
+.why {
+  .media-object {
+    @include flex-grid-column(100%);
+
+    @include breakpoint(medium) {
+      @include flex-grid-column(50%);
+    }
+  }
+}

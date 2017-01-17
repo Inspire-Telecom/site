@@ -1,0 +1,51 @@
+body > header {
+  @include flex-align(center, middle);
+  display: flex;
+  position: relative;
+  height: 85vh;
+  min-height: 500px;
+  background: transparentize($black, 0.5);
+  text-align: center;
+  color: $white;
+  overflow: hidden;
+  font-size: 120%;
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('') no-repeat;
+    background-size: cover;
+  }
+
+  .heading {
+    @include flex-grid-column();
+  }
+}
+
+.top-bar {
+  img {
+    height: 50px;
+    margin: 0.8rem;
+  }
+
+  .content {
+    @include flex-align(justify, middle);
+  }
+
+  @include breakpoint(small down) {
+    .content {
+      @include flex-align(center, middle);
+    }
+
+    .contact {
+      display: none;
+    }
+  }
+}

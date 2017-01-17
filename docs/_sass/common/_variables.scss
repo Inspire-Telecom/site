@@ -1,0 +1,33 @@
+// Typography
+$font-path: '../fonts/';
+$icon-font-path: $font-path;
+$font-faces:
+  ('Bebas Neue' 'bebasneue' normal normal)
+  ('Fira Sans' 'firasans-regular' normal normal)
+  ('Fira Sans' 'firasans-italic' normal italic)
+  ('Fira Sans' 'firasans-bold' bold normal)
+  ('Fira Sans' 'firasans-bolditalic' bold italic)
+;
+$body-font-family: ('Fira Sans', Arial, sans-serif);
+$header-font-family: ('Bebas Neue', Georgia, 'Times New Roman', serif);
+
+// Grid
+$global-flexbox: true;
+$global-width: 55rem;
+
+// Colors
+$white: #fff;
+$foundation-palette: (
+  'primary': #2a2d65,
+  'secondary': #015586,
+  'tercery': #63c7e7,
+  'grey': #575359,
+  'success': #3adb76,
+  'warning': #ffae00,
+  'alert': #ec5840
+);
+
+// Transition
+$transition: ease-out 0.2s;
+$inspire-shadow: rgba(0, 0, 0, 0.3) 3px 3px;
+$inspire-shadow-transition: box-shadow ease-out 0.2s;

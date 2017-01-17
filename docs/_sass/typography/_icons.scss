@@ -1,0 +1,35 @@
+.icons {
+  vertical-align: sub;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: $white;
+  border: $callout-border;
+  border-radius: 50%;
+  transition: $inspire-shadow-transition;
+
+  a:hover > &,
+  a:focus > &,
+  a:active > &,
+  button:hover > &,
+  button:focus > &,
+  button:active > & {
+    opacity: 0.65;
+  }
+
+  .media-object:hover &,
+  .competence:hover & {
+    box-shadow: $inspire-shadow;
+  }
+}
+
+.icon-sm {
+  height: 25px;
+  width: 25px;
+}
+
+.icon-lg {
+  height: 60px;
+  width: 60px;
+}

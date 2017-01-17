@@ -1,0 +1,16 @@
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 0.5em;
+
+  @each $name, $color in $foundation-palette {
+    &.#{$name} {
+      background: $color;
+    }
+  }
+}
+
+.assets-logo {
+  padding: 2em 5em 2em 0;
+}

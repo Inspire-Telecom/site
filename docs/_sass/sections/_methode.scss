@@ -1,0 +1,77 @@
+.methode {
+  .media-row {
+    @include flex-grid-column(100%);
+    @include flex-grid-row();
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(48px + 0.625rem);
+      height: 100%;
+      width: 4px;
+      background: map-get($foundation-palette, primary);
+      z-index: -99;
+
+      @include breakpoint(medium) {
+        left: 49.75%;
+        width: 0.5%;
+      }
+    }
+
+    @include breakpoint(medium) {
+      &:nth-of-type(even) {
+        @include flex-align(right);
+
+        .image-section {
+          transform: translateX(-50%);
+        }
+      }
+
+      &:nth-of-type(odd) {
+        .image-section {
+          @include flex-order(2);
+          transform: translateX(50%);
+        }
+
+        .main-section {
+          @include flex-order(1);
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .media-object {
+    @include flex-grid-column(100%, 0);
+
+    @include breakpoint(medium) {
+      @include flex-grid-column(50%, 0);
+
+      .image-section {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .final {
+    @include flex-grid-column(100%);
+
+    @include breakpoint(medium) {
+      @include flex-align(center);
+      flex-wrap: wrap;
+
+      .main-section {
+        @include flex-grid-column(100%);
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .media-object-section {
+        @include flex-grid-column(100%);
+      }
+    }
+  }
+}
