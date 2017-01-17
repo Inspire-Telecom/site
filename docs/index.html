@@ -1,22 +1,26 @@
 ---
 layout: default
+title: null
 ---
 {% include header-home.html %}
-{% for section in site.sections %}
-  <section class="{{ section.name }}">
-    <div class="content">
-      {% if section.title %}
-      <header>
-        <h2>{{ section.title }}</h2>
-        {% if section.subtitle  %}
-        <h4 class="subheader">{{ section.subtitle }}</h4>
+<main role="main" class="">
+  {% assign sections = site.sections | sort: 'number' %}
+  {% for section in sections %}
+    <section class="{{ section.name }}">
+      <div class="content">
+        {% if section.title != section.name %}
+        <header>
+          <h2>{{ section.title }}</h2>
+          {% if section.subtitle  %}
+          <h4 class="subheader">{{ section.subtitle }}</h4>
+          {% endif %}
+        </header>
         {% endif %}
-      </header>
+      {{ section.content }}
+      </div>
+      {% if section.button %}
+        {% include devis-button.html content=section.button %}
       {% endif %}
-    {{ section.content }}
-    </div>
-    {% if section.button %}
-      {% include devis-button.html button=section.button %}
-    {% endif %}
-  </section>
-{% endfor %}
+    </section>
+  {% endfor %}
+</main>

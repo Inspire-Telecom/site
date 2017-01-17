@@ -5,7 +5,7 @@
 npm-debug.log
 
 # Builds
-/htdocs/assets
+_site/
 
 # Project
 /.vs

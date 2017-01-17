@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<section>
-  <div class="content">
-    <h2>{% if subtitle %}{{ subtitle }}{% else %}{{ title }}{% endif %}</h2>
-    {{ content }}
-  </div>
-</section>
+<main role="main" class="">
+  <section>
+    <div class="content">
+      <h2>{% if page.subtitle %}{{ page.subtitle }}{% else %}{{ page.title }}{% endif %}</h2>
+      {{ content }}
+    </div>
+  </section>
+</main>

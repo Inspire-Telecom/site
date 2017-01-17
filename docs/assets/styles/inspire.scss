@@ -1,0 +1,25 @@
+---
+---
+
+@import 'common/copyright';
+@import 'common/variables';
+
+@import 'foundation/foundation.scss';
+
+@include foundation-everything(true);
+
+@import 'common/mixins';
+@import 'common/global';
+@import 'typography/mixins';
+@import 'typography/icons';
+@import 'typography/opentype';
+@import 'components/forms';
+@import 'base/footer';
+@import 'base/header';
+@import 'sections/assets';
+@import 'sections/introduction';
+@import 'sections/competences';
+@import 'sections/why';
+@import 'sections/methode';
+@import 'sections/partners';
+@import 'sections/context';
