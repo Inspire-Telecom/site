@@ -10,7 +10,7 @@ version: 1.0.0
 repository: Inspire-Telecom/site
 
 # Used for Sitemap.xml and your RSS feed
-url: https://next.inspire-telecom.com
+url: https://inspire-telecom.com
 baseurl: ""
 
 # Used for SEO
