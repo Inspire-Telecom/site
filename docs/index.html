@@ -8,7 +8,7 @@ title: null
   {% for section in sections %}
     <section class="{{ section.slug }}">
       <div class="content">
-        {% if section.title != false %}
+        {% if section.title != "Introduction" %}
         <header>
           <h2>{{ section.title }}</h2>
           {% if section.subtitle  %}
