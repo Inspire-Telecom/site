@@ -3,11 +3,55 @@ layout: page
 title: Contact
 subtitle: Nous contacter
 ---
-<form method="post" action="https://contact.inspire-telecom.com/contact/new">
+
+<script src="https://apis.google.com/js/client.js"></script>
+
+<script>
+
+console.log("test 0");
+
+window.onload = function(){
+var CLIENT_ID = "419629780174-bhhi2vk6h8c1mmioiv92ke89a4jdk4p2.apps.googleusercontent.com";
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
+var SCOPE = "https://www.googleapis.com/auth/gmail.send";
+
+gapi.client.init({
+  discoveryDocs: DISCOVERY_DOCS,
+  clientId: CLIENT_ID,
+  scope: SCOPE
+});
+
+function sendMail()
+{
+
+ var base64EncodedEmail = btoa(
+          "Content-Type:  text/plain; charset=\"UTF-8\"\n" +
+          "Content-length: 5000\n" +
+          "Content-Transfer-Encoding: message/rfc2822\n" +
+          "to: contact@inspire-telecom.com\n" +
+          "from: \"Site Inspire\" <contact@inspire-telecom.com>\n" +
+          "subject: Message de test\n\n" +
+
+          "Ceci est un test, merci d'ignorer!"
+  ).replace(/\+/g, '-').replace(/\//g, '_');
+
+  var request = gapi.client.gmail.users.messages.send({
+    'userId': "me",
+    'resource': {
+      'raw': base64EncodedEmail
+    }
+  });
+
+}
+}
+
+</script>
+
+<form onsubmit="sendMail()">
   <div class="row">
     <div class="small-12 medium-6 columns">
       <label>
-        Prénom (test)
+        Prénom
         <input type="text" placeholder="Pierre" name="prenom" required>
       </label>
     </div>
