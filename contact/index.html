@@ -3,54 +3,6 @@ layout: page
 title: Contact
 subtitle: Nous contacter
 ---
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-<script>
-
-  $( document ).ready(function() {
-  $('#contactForm').submit(function (event) 
-  {
-    
-    var obj = new Object();
-
-    obj.nom = document.getElementById('nom').value;
-    obj.prenom = document.getElementById('prenom').value;
-    obj.societe = document.getElementById('societe').value;
-    obj.mail = document.getElementById('mail').value;
-    obj.tel = document.getElementById('tel').value;
-    obj.message = document.getElementById('message').value;
-
-    var sujet_id = document.getElementById('sujet').value;
-    var sujet;
-    if (sujet_id == "devis")
-      sujet = "Demande de devis";
-    else
-      sujet = "Demande générale"
-    obj.sujet = sujet;
-
-    var jsonString= JSON.stringify(obj);
-
-    var http = new XMLHttpRequest();
-    var url = "https://send.haboob.co/v1/hooks/Hkzbutm6g/send/production";
-    var params = jsonString;
-    http.open("POST", url, true);
-
-    http.setRequestHeader("Content-type", "application/json");
-
-    http.onload = function () {
-      window.open("success.html","_self")
-    }
-
-    http.send(params);
-
-    event.preventDefault();
-
-  });
-  });
-
-</script>
-</head>
 
 <form id="contactForm" action="#">
   <div class="row">
@@ -104,3 +56,49 @@ subtitle: Nous contacter
     </div>
   </div>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+
+  $( document ).ready(function() {
+  $('#contactForm').submit(function (event)
+  {
+
+    var obj = new Object();
+
+    obj.nom = document.getElementById('nom').value;
+    obj.prenom = document.getElementById('prenom').value;
+    obj.societe = document.getElementById('societe').value;
+    obj.mail = document.getElementById('mail').value;
+    obj.tel = document.getElementById('tel').value;
+    obj.message = document.getElementById('message').value;
+
+    var sujet_id = document.getElementById('sujet').value;
+    var sujet;
+    if (sujet_id == "devis")
+      sujet = "Demande de devis";
+    else
+      sujet = "Demande générale"
+    obj.sujet = sujet;
+
+    var jsonString= JSON.stringify(obj);
+
+    var http = new XMLHttpRequest();
+    var url = "https://send.haboob.co/v1/hooks/Hkzbutm6g/send/production";
+    var params = jsonString;
+    http.open("POST", url, true);
+
+    http.setRequestHeader("Content-type", "application/json");
+
+    http.onload = function () {
+      window.open("success.html","_self")
+    }
+
+    http.send(params);
+
+    event.preventDefault();
+
+  });
+  });
+
+</script>
