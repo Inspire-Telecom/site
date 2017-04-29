@@ -58,18 +58,17 @@ subtitle: Nous contacter
 </form>
 
 <script>
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', function (event) {
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
     var values = {
-      nom: form.getElementById('nom').value,
-      prenom: form.getElementById('prenom').value,
-      societe: form.getElementById('societe').value,
-      mail: form.getElementById('mail').value,
-      tel: form.getElementById('tel').value,
-      message: form.getElementById('message').value
+      nom: document.getElementById('nom').value,
+      prenom: document.getElementById('prenom').value,
+      societe: document.getElementById('societe').value,
+      mail: document.getElementById('mail').value,
+      tel: document.getElementById('tel').value,
+      message: document.getElementById('message').value
     };
 
-    if (form.getElementById('sujet').value == "devis") {
+    if (document.getElementById('sujet').value == "devis") {
       values.sujet = "Demande de devis";
     } else {
       values.sujet = "Demande générale"
