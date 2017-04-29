@@ -81,9 +81,13 @@ subtitle: Nous contacter
 
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/json");
-    http.onload = function () {
-      window.location.href = "success.html";
-    }
+    http.onload = function (event) {
+      if (this.status === 200) {
+        window.location.href = "success/";
+      } else {
+        window.location.href = "error/";
+      }
+    };
     http.send(params);
 
     event.preventDefault();
