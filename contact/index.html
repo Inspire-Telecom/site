@@ -3,42 +3,43 @@ layout: page
 title: Contact
 subtitle: Nous contacter
 ---
-<form method="post" action="https://contact.inspire-telecom.com/contact/new">
+
+<form id="contactForm" action="#">
   <div class="row">
     <div class="small-12 medium-6 columns">
       <label>
         Prénom
-        <input type="text" placeholder="Pierre" name="prenom" required>
+        <input id="prenom" type="text" placeholder="Pierre" name="prenom" required>
       </label>
     </div>
     <div class="small-12 medium-6 columns">
       <label>
         Nom
-        <input type="text" placeholder="Dupond" name="nom" required>
+        <input id="nom" type="text" placeholder="Dupond" name="nom" required>
       </label>
     </div>
     <div class="small-12 columns">
       <label>
         Société
-        <input type="text" placeholder="Inspire, Inc." name="societe" required>
+        <input id="societe" type="text" placeholder="Inspire, Inc." name="societe" required>
       </label>
     </div>
     <div class="small-12 columns">
       <label>
         Adresse email
-        <input type="email" placeholder="pierre.dupond@inspire-telecom.com" name="email" required>
+        <input id="mail" type="email" placeholder="pierre.dupond@inspire-telecom.com" name="email" required>
       </label>
     </div>
     <div class="small-12 columns">
       <label>
         Téléphone
-        <input type="tel" placeholder="0623456789" name="tel">
+        <input id="tel" type="tel" placeholder="0623456789" name="tel">
       </label>
     </div>
     <div class="small-12 columns">
       <label>
         Sujet
-        <select name="sujet">
+        <select id="sujet" name="sujet">
           <option value="general">Général</option>
           <option value="devis">Demande de devis</option>
         </select>
@@ -47,7 +48,7 @@ subtitle: Nous contacter
     <div class="small-12 columns">
       <label>
         Message
-        <textarea placeholder="Nous souhaitons échanger avec vous..." name="message" required></textarea>
+        <textarea id="message" placeholder="Nous souhaitons échanger avec vous..." name="message" required></textarea>
       </label>
     </div>
     <div class="columns">
@@ -55,3 +56,39 @@ subtitle: Nous contacter
     </div>
   </div>
 </form>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    var values = {
+      nom: document.getElementById('nom').value,
+      prenom: document.getElementById('prenom').value,
+      societe: document.getElementById('societe').value,
+      mail: document.getElementById('mail').value,
+      tel: document.getElementById('tel').value,
+      message: document.getElementById('message').value
+    };
+
+    if (document.getElementById('sujet').value == "devis") {
+      values.sujet = "Demande de devis";
+    } else {
+      values.sujet = "Demande générale"
+    }
+
+    var http = new XMLHttpRequest();
+    var url = "https://send.haboob.co/v1/hooks/Hkzbutm6g/send/production";
+    var params = JSON.stringify(values);
+
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.onload = function (event) {
+      if (this.status === 200) {
+        window.location.href = "success/";
+      } else {
+        window.location.href = "error/";
+      }
+    };
+    http.send(params);
+
+    event.preventDefault();
+  });
+</script>
