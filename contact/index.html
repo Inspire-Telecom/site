@@ -27,7 +27,7 @@ subtitle: Nous contacter
     <div class="small-12 columns">
       <label>
         Adresse email
-        <input id="mail" type="email" placeholder="pierre.dupond@inspire-telecom.com" name="email" required>
+        <input id="email" type="email" placeholder="pierre.dupond@inspire-telecom.com" name="email" required>
       </label>
     </div>
     <div class="small-12 columns">
@@ -63,28 +63,28 @@ subtitle: Nous contacter
       nom: document.getElementById('nom').value,
       prenom: document.getElementById('prenom').value,
       societe: document.getElementById('societe').value,
-      mail: document.getElementById('mail').value,
+      _replyto: document.getElementById('email').value,
       tel: document.getElementById('tel').value,
       message: document.getElementById('message').value
     };
 
-    if (document.getElementById('sujet').value == "devis") {
-      values.sujet = "Demande de devis";
+    if (document.getElementById('sujet').value == 'devis') {
+      values._subject = 'Demande de devis';
     } else {
-      values.sujet = "Demande générale"
+      values._subject = 'Demande générale';
     }
 
     var http = new XMLHttpRequest();
-    var url = "https://send.haboob.co/v1/hooks/Hkzbutm6g/send/production";
     var params = JSON.stringify(values);
 
-    http.open("POST", url, true);
-    http.setRequestHeader("Content-type", "application/json");
+    http.open('POST', 'https://formspree.io/contact@inspire-telecom.com', true);
+    http.setRequestHeader('Content-type', 'application/json');
+    http.setRequestHeader('Accept', 'application/json');
     http.onload = function (event) {
       if (this.status === 200) {
-        window.location.href = "success/";
+        window.location.href = 'success/';
       } else {
-        window.location.href = "error/";
+        window.location.href = 'error/';
       }
     };
     http.send(params);
