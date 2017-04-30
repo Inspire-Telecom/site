@@ -4,7 +4,7 @@ title: Contact
 subtitle: Nous contacter
 ---
 
-<form id="contactForm" action="#">
+<form id="contactForm" action="https://formspree.io/contact@inspire-telecom.com" method="POST">
   <div class="row">
     <div class="small-12 medium-6 columns">
       <label>
@@ -39,9 +39,9 @@ subtitle: Nous contacter
     <div class="small-12 columns">
       <label>
         Sujet
-        <select id="sujet" name="sujet">
-          <option value="general">Général</option>
-          <option value="devis">Demande de devis</option>
+        <select id="sujet" name="_subject">
+          <option value="Général">Général</option>
+          <option value="Devis">Demande de devis</option>
         </select>
       </label>
     </div>
@@ -52,6 +52,7 @@ subtitle: Nous contacter
       </label>
     </div>
     <div class="columns">
+      <input type="hidden" name="_next" value="{{ site.url }}/contact/success/" />
       <button class="expanded button large" type="submit">Envoyer</button>
     </div>
   </div>
@@ -68,7 +69,7 @@ subtitle: Nous contacter
       message: document.getElementById('message').value
     };
 
-    if (document.getElementById('sujet').value == 'devis') {
+    if (document.getElementById('sujet').value == 'Devis') {
       values._subject = 'Demande de devis';
     } else {
       values._subject = 'Demande générale';
